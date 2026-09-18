@@ -17,5 +17,5 @@ test(`Create new comment without body field`, async ({
   const comment = {};
   const response = await api.createComment(slug, comment, registeredUser.token);
 
-  await api.comments.assertSuccessResponseCode(response);
+  await api.comments.assertUnprocessableEntityResponseCode(response);
 });
